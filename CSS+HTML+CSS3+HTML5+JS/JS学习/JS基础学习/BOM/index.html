@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>跳转界面</title>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      // console.log(location.search)
+      // substr()从起始位置，截取几个字符?uname=9
+      var params = location.search.substr(1, 7)
+      var arr = params.split('=')
+      var div = document.querySelector('div')
+      div.innerHTML = arr[1] + '欢迎您！'
+      console.log(arr)
+      console.log(arr[1])
+    </script>
+  </body>
+</html>

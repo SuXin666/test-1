@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>伪类选择器练习</title>
+    <style>
+      a:link {
+        color: red; /* 选择未点击过的*/
+        text-decoration: none;
+      }
+      a:visited {
+        color: orange; /*选择点击过的*/
+      }
+      a:hover {
+        color: skyblue; /*选择鼠标经过的链接*/
+      }
+      a:active {
+        color: green; /*选择鼠标正在按下未拿开时*/
+      }
+      input:focus {
+        background-color: gray;
+      }
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#">大猪</a>
+    <input tetx="" />
+    <input text="" />
+    <div>独占一行</div>
+    666
+  </body>
+</html>

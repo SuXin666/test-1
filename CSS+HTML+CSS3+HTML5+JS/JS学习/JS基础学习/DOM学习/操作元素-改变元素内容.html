@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>操作元素-改变元素内容</title>
+    <style>
+      div,
+      p {
+        width: 300px;
+        height: 30px;
+        line-height: 30px;
+        color: #fff;
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <p></p>
+    <button>点击按钮改变时间</button>
+    <div>刷新时间</div>
+    <script>
+      // 获取元素
+      var btn = document.querySelector('button')
+      var div = document.querySelector('div')
+      // 注册事件
+      btn.onclick = function () {
+        div.innerText = getDate()
+      }
+      function getDate() {
+        var now = new Date()
+        // 获取年月日
+        var year = now.getFullYear()
+        var month = now.getMonth() + 1
+        var day = now.getDate()
+        var week = now.getDay()
+        var arr = ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期天']
+        return '今天是：' + year + '年' + month + '月' + day + '日 ' + arr[week]
+        // var hour = now.getHours()
+        // var minute = now.getMinutes()
+        // var seconds = now.getSeconds()
+        // return '现在是' + hour + '时' + minute + '分' + seconds + '秒'
+      }
+      var p = document.querySelector('p')
+      p.innerText = getDate()
+    </script>
+  </body>
+</html>

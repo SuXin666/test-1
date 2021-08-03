@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 后代选择器 */
+      ul li {
+        color: red;
+      }
+      .nav li a {
+        color: yellow;
+      }
+      /* 子选择器 */
+      .OL > a {
+        color: pink;
+      }
+      /* 并集选择器 */
+      div,
+      p,
+      span,
+      .pig li {
+        color: brown;
+      }
+    </style>
+  </head>
+  <body>
+    <ol class="OL">
+      <a href="#">我是苏欣1</a>
+      <p>
+        <a href="#">我是苏欣2</a>
+      </p>
+      <li>我是苏欣</li>
+      <li>我是苏欣</li>
+      <li>我是苏欣</li>
+    </ol>
+    <ul>
+      <li>我是ul</li>
+      <li>我是ul</li>
+      <li>我是ul</li>
+      <li><a href="#">我是u</a></li>
+    </ul>
+    <ul class="nav">
+      <li>我是ul</li>
+      <li>我是ul</li>
+      <li><a href="#">我是ul</a></li>
+      <li><a href="#">我是ul</a></li>
+    </ul>
+
+    <div>熊大</div>
+    <p>熊二</p>
+    <span>光头强</span>
+    <ul class="pig">
+      <li>大猪</li>
+      <li>小猪</li>
+    </ul>
+  </body>
+</html>

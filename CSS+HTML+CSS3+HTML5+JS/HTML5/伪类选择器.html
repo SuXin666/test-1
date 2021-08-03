@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>伪类选择器</title>
+    <style>
+      /* 选择ul里面li的第一个孩子 */
+      ul li:first-child {
+        background-color: brown;
+      }
+      /* 选择ul里面li的最后一个孩子 */
+      ul li:last-child {
+        background-color: brown;
+      }
+      /* 选择ul里面li的第n个孩子 */
+      ul li:nth-child(3) {
+        background-color: pink;
+      }
+      /* 选择ul里面li的为偶数的孩子 */
+      ul li:nth-child(even) {
+        background-color: skyblue;
+      }
+      ul li:nth-child(2n + 1) {
+        background-color: yellow;
+      }
+      section div:nth-of-type(1) {
+        background-color: purple;
+      }
+      .box {
+        width: 300px;
+        height: 200px;
+        background-color: pink;
+      }
+      .box::before {
+        content: '是苏欣';
+      }
+      .box::after {
+        content: ' haha';
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+    </ul>
+    <section>
+      <p>哈哈</p>
+      <div>熊大</div>
+      <div>熊二</div>
+    </section>
+    <div class="box">我</div>
+  </body>
+</html>

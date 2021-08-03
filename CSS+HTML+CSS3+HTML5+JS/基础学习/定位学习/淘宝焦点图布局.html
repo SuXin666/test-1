@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>淘宝轮播图图</title>
+    <style>
+      * {
+        margin: o;
+        padding: 0;
+      }
+      .tb-promo {
+        position: relative;
+        width: 520px;
+        height: 280px;
+        background-color: pink;
+        margin: 100px auto;
+      }
+      .tb-promo img {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 520px;
+        height: 280px;
+      }
+      .prev {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: -15px;
+        background-color: rgba(0, 0, 0, 0.6);
+        width: 20px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        text-decoration: none;
+        color: white;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+      }
+      .next {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        margin-top: -15px;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.7);
+        width: 20px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        text-decoration: none;
+        color: white;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+      }
+      .tb-promo a:hover {
+        color: coral;
+      }
+      .promo-nav {
+        position: absolute;
+        left: 50%;
+        margin-left: -35px;
+        bottom: 10px;
+        width: 70px;
+        height: 13px;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 7px;
+        /* background-color: pink; */
+      }
+      li {
+        list-style: none;
+      }
+      .promo-nav li {
+        float: left;
+        width: 8px;
+        height: 8px;
+        background-color: pink;
+        margin: 3px;
+        border-radius: 4px;
+      }
+      .promo-nav .selected {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tb-promo">
+      <img src="淘宝.jpg" alt="" title="logo" />
+      <a href="#" class="prev"><</a>
+      <a href="#" class="next">></a>
+      <ul class="promo-nav">
+        <li class="selected"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </body>
+</html>

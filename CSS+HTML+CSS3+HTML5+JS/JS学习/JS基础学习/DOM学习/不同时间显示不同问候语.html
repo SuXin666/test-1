@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>不同时间显示不同问候语</title>
+    <style>
+      img {
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <img scr="images/上午好.gif" alt="" />
+    <div>上午好</div>
+    <script>
+      var img = document.querySelector('img')
+      var div = document.querySelector('div')
+      var nowTime = new Date()
+      var hour = nowTime.getHours()
+      if (hour < 12) {
+        img.src = 'images/上午好.gif'
+        div.innerHTML = '上午好'
+      } else if (hour < 18) {
+        img.src = 'images/下午好.jpg'
+        div.innerHTML = '下午好'
+      } else {
+        img.src = 'images/晚安.gif'
+        div.innerHTML = '晚安'
+      }
+    </script>
+  </body>
+</html>

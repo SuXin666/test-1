@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>父节点操作</title>
+  </head>
+  <body>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+    <div class="demo">
+      <div class="box">
+        <span class="erweima">*</span>
+      </div>
+    </div>
+    <script>
+      var erweima = document.querySelector('.erweima')
+      console.log(erweima.parentNode)
+      var ul = document.querySelector('ul')
+      console.log(ul.childNodes)
+      console.log(ul.children)
+      console.log(ul.firstElementChild)
+      console.log(ul.lastElementChild)
+      // 最好的方法
+      console.log(ul.children[1])
+    </script>
+  </body>
+</html>

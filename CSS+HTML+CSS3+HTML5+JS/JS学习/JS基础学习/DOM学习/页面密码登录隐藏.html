@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>页面登录页面隐藏</title>
+    <style>
+      .box {
+        position: relative;
+        width: 400px;
+        border-bottom: 1px solid pink;
+        margin: 100px auto;
+      }
+      .box input {
+        width: 370px;
+        height: 30px;
+        border: 0;
+        outline: none;
+      }
+      .box img {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        width: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <label for="">
+        <img src="images/open.jpg" alt="" title="" />
+      </label>
+      <input type="password" name="" id="pwd" />
+    </div>
+    <script>
+      var eye = document.querySelector('img')
+      var pwd = document.getElementById('pwd')
+      var flag = 0
+      eye.onclick = function () {
+        if (flag == 0) {
+          pwd.type = 'text'
+          flag = 1
+          eye.src = 'images/open.jpg'
+        } else {
+          pwd.type = 'password'
+          flag = 0
+          eye.src = 'images/close.jpg'
+        }
+      }
+    </script>
+  </body>
+</html>

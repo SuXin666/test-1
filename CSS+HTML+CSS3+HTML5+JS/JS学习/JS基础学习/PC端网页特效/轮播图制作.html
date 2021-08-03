@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        background-color: #999;
+      }
+      .cou {
+        width: 200px;
+        height: 400px;
+        border: 8px solid red;
+        margin: 30px auto;
+        position: relative;
+      }
+      .lun img {
+        width: 200px;
+        height: 386px;
+      }
+      .lun a {
+        display: none;
+      }
+      .lun a.on {
+        display: block;
+      }
+      .item {
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .item li {
+        float: left;
+        width: 10px;
+        height: 10px;
+        list-style: none;
+        border-radius: 50%;
+        background-color: #fff;
+        margin-right: 10px;
+      }
+      .item li.current {
+        background-color: orange;
+      }
+      .al {
+        width: 24px;
+        height: 24px;
+        display: inline-block;
+        position: absolute;
+        top: 174px;
+        background: rgba(255, 255, 255, 0.3);
+        display: none;
+      }
+      .al img {
+        width: 20px;
+        height: 20px;
+        margin: 2px;
+      }
+      .ar {
+        width: 24px;
+        height: 24px;
+        display: inline-block;
+        position: absolute;
+        top: 174px;
+        right: 0;
+        background: rgba(255, 255, 255, 0.3);
+        display: none;
+      }
+      .ar img {
+        width: 20px;
+        height: 20px;
+        margin: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cou">
+      <!--轮播区-->
+      <div class="lun">
+        <a href="#" class="on"><img src="images/8.png" /></a>
+        <a href="#"><img src="images/9.png" /></a>
+        <a href="#"><img src="images/10.png" /></a>
+        <a href="#"><img src="images/11.png" /></a>
+      </div>
+      <ul class="item">
+        <li class="current"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <a href="#" class="al"><img src="images/arrowLeft.png" /></a>
+      <a href="#" class="ar"><img src="images/arrowRiht.png" /></a>
+    </div>
+
+    <script type="text/javascript">
+      //获取元素
+      var o = document.querySelector('.cou')
+      var as = document.querySelector('.lun').querySelectorAll('a')
+      var lis = document.querySelector('.item').querySelectorAll('li')
+      var al = document.querySelector('.al')
+      var ar = document.querySelector('.ar')
+
+      var index = 0 //保存当前展示的轮播图的索引，默认0
+      var len = as.length
+      var t
+
+      //自动轮播
+      t = setInterval(moveNext, 2000)
+      //鼠标经过，停止轮播
+      o.onmouseover = function () {
+        clearInterval(t)
+        o.style.cursor = 'pointer'
+        al.style.display = 'block'
+        ar.style.display = 'block'
+      }
+
+      //鼠标离开，继续轮播
+      o.onmouseout = function () {
+        t = setInterval(moveNext, 2000)
+        al.style.display = 'none'
+        ar.style.display = 'none'
+      }
+
+      //指示器轮播
+      for (var i = 0; i < lis.length; i++) {
+        lis[i]._index = i //新增属性，保存位置
+        //为每一个li追加点击事件
+        lis[i].onclick = function () {
+          //当前显示的li，修改为未选中状态
+          lis[index].className = ''
+          as[index].className = '' //当前显示的轮播图改为不显示
+
+          this.className = 'current' //被点击的li，改为选中状态
+          as[this._index].className = 'on' //轮播显示为对应
+
+          //修改index值
+          index = this._index
+        }
+      }
+
+      //箭头轮播
+      //右箭头
+      al.onclick = function () {
+        movePre()
+      }
+
+      //左箭头
+      ar.onclick = function () {
+        moveNext()
+      }
+
+      //切换下一张
+      function moveNext() {
+        as[index].className = '' //当前显示的轮播图改为不显示
+        lis[index].className = '' //当前指示器不显示
+        index++ //索引递增
+        if (index == len) {
+          index = 0 //最后一张切换为第一张
+        }
+        as[index].className = 'on' //下一张显示
+        lis[index].className = 'current'
+      }
+
+      //切换上一张
+      function movePre() {
+        as[index].className = ''
+        lis[index].className = ''
+        index--
+        if (index == -1) {
+          index = len - 1 //第一张时，修改为最后一张
+        }
+        //上一张展示
+        as[index].className = 'on'
+        lis[index].className = 'current'
+      }
+    </script>
+  </body>
+</html>

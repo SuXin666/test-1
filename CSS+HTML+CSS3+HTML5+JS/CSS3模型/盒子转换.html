@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>旋转-移动</title>
+    <style>
+      .da {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        transition: all 1s;
+        margin: 100px auto;
+        transform-origin: left bottom;
+        /* transform: translate(400px, 10px); */
+      }
+      .da:hover {
+        transform: rotate(360deg);
+      }
+      /* .pic {
+        overflow: hidden;
+      } */
+      .pic img {
+        border-radius: 50%;
+        width: 300px;
+        height: 300px;
+        transition: all 0.3s;
+      }
+      .pic img:hover {
+        transform-origin: right bottom;
+        transform: scale(2) rotate(360deg);
+      }
+      .sanjiao {
+        position: relative;
+        width: 250px;
+        height: 25px;
+        border: 1px solid skyblue;
+      }
+      .sanjiao::after {
+        content: '';
+        right: 15px;
+        top: 5px;
+        width: 10px;
+        height: 10px;
+        border-left: 1px solid red;
+        border-top: 1px solid red;
+        position: absolute;
+        transform: rotate(45deg);
+      }
+      .sanjiao:hover::after {
+        transform: rotate(225deg);
+      }
+      .zuoxia {
+        overflow: hidden;
+        width: 300px;
+        height: 300px;
+        margin-left: 600px;
+        border: 1px solid red;
+      }
+      .zuoxia::after {
+        display: block;
+        content: '苏欣';
+        width: 100%;
+        height: 100%;
+        transform: rotate(180deg);
+        transform-origin: right bottom;
+        background-color: pink;
+        transition: all 1s;
+      }
+      .zuoxia:hover::after {
+        transform: rotate(0deg);
+      }
+      .suofang {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        margin-left: 600px;
+      }
+      .suofang:hover {
+        transform: scale(2);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="da"></div>
+    <div class="pic">
+      <img src="苏欣.jpg" />
+    </div>
+    <div class="sanjiao">123</div>
+    <div class="zuoxia"></div>
+    <div class="suofang"></div>
+  </body>
+</html>

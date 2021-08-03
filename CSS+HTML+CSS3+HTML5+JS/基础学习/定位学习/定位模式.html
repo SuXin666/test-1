@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>定位练习</title>
+    <style>
+      /* 相对定位 */
+      .box1 {
+        position: relative;
+        top: 100px;
+        left: 300px;
+        width: 300px;
+        height: 200px;
+        background-color: pink;
+      }
+      .box2 {
+        width: 300px;
+        height: 200px;
+        background-color: purple;
+      }
+      /* 绝对定位 */
+      .father {
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        background-color: gray;
+      }
+      .son {
+        position: relative;
+        top: 100px;
+        left: 50px;
+        width: 150px;
+        height: 100px;
+        background-color: skyblue;
+      }
+      .dj {
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dj">
+      <img src="定位.png" alt="" title="logo" />
+    </div>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+
+    <p>aaa</p>
+    <p>aaa</p>
+
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="father">
+      <div class="son">son</div>
+    </div>
+  </body>
+</html>

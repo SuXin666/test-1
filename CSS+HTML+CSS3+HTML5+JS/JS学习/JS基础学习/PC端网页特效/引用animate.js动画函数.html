@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>引用animate.js动画函数</title>
+    <style>
+      .sliderbar {
+        position: relative;
+        right: 10px;
+        top: 50px;
+      }
+      span {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 40px;
+        height: 40px;
+        background-color: red;
+      }
+      .con {
+        position: absolute;
+        left: -400px;
+        top: 0;
+        width: 200px;
+        height: 40px;
+        background-color: purple;
+        z-index: -1;
+      }
+    </style>
+    <script src="animate.js"></script>
+  </head>
+  <body>
+    <div class="sliderbar">
+      <span>◁</span>
+      <div class="con">问题反馈</div>
+    </div>
+  </body>
+  <script>
+    //    1获取元素
+    var dhz = document.querySelector('.sliderbar')
+    var con = document.querySelector('.con')
+    // 当我们鼠标进过sliderbar 就会让con这个盒子滑到左侧
+    // 当我们鼠标离开 sliderbar 就会让这个con盒子滑动到右侧
+    dhz.addEventListener('mouseenter', function () {
+      animate(con, 50, function () {
+        dhz.children[0].innerHTML = '▷'
+        con.style.backgroundColor = 'pink'
+      })
+    })
+    dhz.addEventListener('mouseleave', function () {
+      animate(con, -400, function () {
+        dhz.children[0].innerHTML = '◁'
+        con.style.backgroundColor = 'yellow'
+      })
+    })
+  </script>
+</html>

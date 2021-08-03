@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM事件流三个阶段</title>
+    <style>
+      .father {
+        width: 400px;
+        height: 200px;
+        background-color: pink;
+        margin: 100px auto;
+      }
+      .son {
+        width: 200px;
+        height: 100px;
+        background-color: purple;
+        margin: 200px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="father">
+      <div class="son">儿子</div>
+    </div>
+    <script>
+      var son = document.querySelector('.son')
+      son.addEventListener(
+        'click',
+        function (e) {
+          alert('儿子')
+          e.stopPropagation()
+          // 或者用e.cancelBubble = true
+        },
+        false
+      )
+      var father = document.querySelector('.father')
+      father.addEventListener(
+        'click',
+        function (e) {
+          alert('好爸爸')
+        },
+        false
+      )
+    </script>
+  </body>
+</html>

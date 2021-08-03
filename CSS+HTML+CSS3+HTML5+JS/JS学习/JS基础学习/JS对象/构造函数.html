@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>构造函数</title>
+    <script>
+      function Star(uname, uage, usex) {
+        this.name = uname
+        this.age = uage
+        this.sex = usex
+        this.sing = function (sang) {
+          console.log(sang)
+        }
+      }
+      var person = new Star('苏欣', 19, '男')
+      console.log(person.age)
+      console.log(person['sex'])
+      person.sing('haha')
+    </script>
+  </head>
+  <body></body>
+</html>

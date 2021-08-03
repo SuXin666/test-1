@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>统计出现最多的的字符和次数</title>
+    <script>
+      var str = 'abcdefgabbbogaa'
+      var obj = {}
+      for (var i = 0; i < str.length; i++) {
+        var chars = str.charAt(i)
+
+        if (obj[chars]) {
+          obj[chars]++
+        } else {
+          obj[chars] = 1
+        }
+      }
+      console.log(obj)
+      var max = 0
+      var ch = ''
+      for (var j in obj) {
+        // console.log(obj[j])
+        if (obj[j] > max) {
+          max = obj[j]
+          ch = j
+        }
+      }
+      console.log(max)
+      console.log(ch)
+    </script>
+  </head>
+  <body></body>
+</html>

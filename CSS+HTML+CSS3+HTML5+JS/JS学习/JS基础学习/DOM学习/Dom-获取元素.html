@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>获取元素</title>
+  </head>
+  <body>
+    <div id="time">苏欣</div>
+    <div class="box">盒子1</div>
+    <div class="box">盒子2</div>
+    <ul>
+      <li>真牛啊！！！</li>
+      <li>真牛啊！！！</li>
+      <li>真牛啊！！！</li>
+      <li>真牛啊！！！</li>
+    </ul>
+    <ol id="ol">
+      <li>这是ol</li>
+      <li>这是ol</li>
+      <li>这是ol</li>
+      <li>这是ol3</li>
+    </ol>
+    <div id="nav">
+      <ol>
+        <li>首页</li>
+        <li>末页</li>
+      </ol>
+    </div>
+    <script>
+      //1. getElementById方法
+      var timer = document.getElementById('time')
+      console.log(timer)
+      console.dir(timer)
+
+      //2. getElementsByTagName获取元素具体标签方法（li）
+      var list = document.getElementsByTagName('li')
+      console.log(list)
+      console.log(list[0])
+      console.log(typeof list)
+      for (var i = 0; i < list.length; i++) {
+        // console.log(list[i])
+      }
+      // var list1 = document.getElementsByTagName('ol')
+      // console.log(list1[0].getElementsByTagName('li'))
+      var list2 = document.getElementById('ol')
+
+      console.log(list2.getElementsByTagName('li'))
+
+      //3. 通过类名获取元素
+      var list3 = document.getElementsByClassName('box')
+      console.log(list3)
+
+      // 4.通过querySelector 返回指定选择器的第一个元素(返回的是第一个元素)
+      var first = document.querySelector('.box')
+      console.log(first)
+      var nav = document.querySelector('#nav')
+      console.log(nav)
+      // 返回li的时候是返回页面的第一个li
+      var li = document.querySelector('li')
+      console.log(li)
+      // 5.querySelectorAll()返回的是指定选择器的所有元素集合
+      var allBox = document.querySelectorAll('.box')
+      console.log(allBox)
+    </script>
+  </body>
+</html>

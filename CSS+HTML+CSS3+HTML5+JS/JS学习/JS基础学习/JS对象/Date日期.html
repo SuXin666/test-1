@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date日期</title>
+    <script>
+      var now = new Date()
+      // 获取年月日
+      var year = now.getFullYear()
+      var month = now.getMonth() + 1
+      var day = now.getDate()
+      var week = now.getDay()
+      var arr = ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期天']
+      console.log('今天是：' + year + '年' + month + '月' + day + '日 ' + arr[week])
+      var hour = now.getHours()
+      var minute = now.getMinutes()
+      var seconds = now.getSeconds()
+      console.log('现在是' + hour + '时' + minute + '分' + seconds + '秒')
+    </script>
+  </head>
+  <body></body>
+</html>

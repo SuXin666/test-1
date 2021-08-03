@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>筋斗云案例</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        background: url('sea.jpg') no-repeat gray;
+        background-size: cover;
+      }
+
+      div {
+        position: relative;
+        width: 800px;
+        height: 42px;
+        margin: 100px auto;
+        border-radius: 5px;
+        background: url('上午好.gif') no-repeat right #fff;
+      }
+
+      ul {
+        list-style: none;
+        position: relative;
+      }
+
+      li {
+        float: left;
+
+        width: 83px;
+        height: 42px;
+        font: 400 16px/42px 'simsun';
+        text-align: center;
+        cursor: pointer;
+      }
+      li a {
+        text-decoration: none;
+      }
+      span {
+        position: absolute;
+        width: 83px;
+        height: 42px;
+        left: 0;
+        background: url('sea.jpg') no-repeat;
+      }
+    </style>
+    <script src="animate.js"></script>
+    <script>
+      window.addEventListener('load', function () {
+        var cloud = document.querySelector('.cloud')
+        var lis = document.querySelector('.c-nav').querySelectorAll('li')
+        var current = 0
+        for (var i = 0; i < lis.length; i++) {
+          lis[i].addEventListener('mouseenter', function () {
+            animate(cloud, this.offsetLeft)
+          })
+          lis[i].addEventListener('mouseleave', function () {
+            animate(cloud, current)
+          })
+          lis[i].addEventListener('click', function () {
+            current = this.offsetLeft
+          })
+        }
+      })
+    </script>
+  </head>
+  <body>
+    <div id="c_nav" class="c-nav">
+      <span class="cloud"></span>
+      <ul>
+        <li class="current"><a href="#">首页新闻</a></li>
+        <li>师资力量</li>
+        <li>大厦</li>
+        <li>大叔大婶</li>
+        <li>大萨达啥</li>
+        <li>好滴好滴是</li>
+        <li>功夫格斗</li>
+        <li>个梵蒂冈</li>
+      </ul>
+    </div>
+  </body>
+</html>

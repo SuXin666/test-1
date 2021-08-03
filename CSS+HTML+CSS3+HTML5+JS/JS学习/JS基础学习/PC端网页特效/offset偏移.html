@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>offset偏移</title>
+    <style>
+      .father {
+        position: relative;
+        width: 200px;
+        height: 100px;
+        margin: 100px auto;
+        background-color: pink;
+        border: 1px solid red;
+      }
+      .son {
+        width: 100px;
+        height: 50px;
+        background-color: purple;
+        margin: auto;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="father">
+      <div class="son"></div>
+    </div>
+    <script>
+      var father = document.querySelector('.father')
+      var son = document.querySelector('.son')
+      console.log(father.offsetTop)
+      console.log(son.offsetTop)
+      console.log(son.offsetLeft)
+      console.log('son的盒子宽度：' + son.offsetWidth)
+      console.log('son的盒子高度' + son.offsetHeight)
+      console.log('返回带有定位的父亲' + son.offsetParent)
+      console.log(son.parentNode)
+    </script>
+  </body>
+</html>

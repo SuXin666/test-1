@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>体验CSS语法</title>
+    <style>
+      /* 选择器{样式} */
+      /* 给谁改样式{改什么样式} */
+
+      p {
+        /* 修改文字颜色 */
+        color: red;
+        /* 修改字体大小 */
+        font-size: 20px;
+      }
+      div {
+        color: pink;
+      }
+      .green {
+        color: green;
+      }
+      .size {
+        font-size: 200px;
+      }
+      /* id选择器 */
+      #yellow {
+        color: yellow;
+      }
+      /* *{}将所有标签都改成一个样式 */
+      /* * {
+        color: red;
+      } */
+    </style>
+  </head>
+  <body>
+    <h2>标签选择器</h2>
+    <p>有点意思</p>
+    <div>女生</div>
+
+    <h2>类选择器</h2>
+    <ul>
+      <li class="green size">很好</li>
+      <li class="white">一般</li>
+      <li>差</li>
+      <li id="yellow">很差</li>
+    </ul>
+    <div class="green">我也想要变绿色</div>
+  </body>
+</html>

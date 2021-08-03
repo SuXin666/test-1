@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>window事件—onload运用</title>
+  </head>
+  <body>
+    <!-- <button>1</button> -->
+    <script>
+      window.onload = function () {
+        var btn = document.querySelector('button')
+        btn.addEventListener('click', function () {
+          alert('hh')
+        })
+      }
+      document.addEventListener('DOMContentLoaded', function () {
+        alert(33)
+      })
+      window.addEventListener('resize', function () {
+        console.log(window.innerWidth)
+        console.log('变化了')
+      })
+    </script>
+    <button>点击</button>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>热点图</title>
+    <style>
+      body {
+        background-color: #333;
+      }
+      .map {
+        position: relative;
+        width: 500px;
+        height: 355px;
+        margin: 100px auto;
+        background: url(热力图.jpg) no-repeat;
+      }
+      .city_jx {
+        position: absolute;
+        top: 250px;
+        right: 240px;
+      }
+      .city_jx div[class^='pluse'] {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 12px red;
+        border-radius: 50%;
+        animation: move 1.5s linear infinite;
+      }
+      .city_jx div .pluse2 {
+        animation-delay: 0.4s;
+      }
+      .city_jx div .pluse3 {
+        animation-delay: 0.8s;
+      }
+      .city_gd {
+        position: absolute;
+        top: 270px;
+        right: 180px;
+      }
+      .city_gd div[class^='pluse'] {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 12px red;
+        border-radius: 50%;
+        animation: move 1.5s linear infinite;
+      }
+      .city_gd div .pluse2 {
+        animation-delay: 0.4s;
+      }
+      .city_gd div .pluse3 {
+        animation-delay: 0.8s;
+      }
+      .city {
+        position: absolute;
+        top: 150px;
+        right: 140px;
+      }
+      .pot {
+        width: 4px;
+        height: 4px;
+        background-color: red;
+        border-radius: 2px;
+      }
+      .city div[class^='pluse'] {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 12px red;
+        border-radius: 50%;
+        animation: move 1.5s linear infinite;
+      }
+      .city div .pluse2 {
+        animation-delay: 0.4s;
+      }
+      .city div .pluse3 {
+        animation-delay: 0.8s;
+      }
+      @keyframes move {
+        0% {
+        }
+        70% {
+          width: 16px;
+          height: 16px;
+          opacity: 1;
+        }
+        100% {
+          width: 25px;
+          height: 25px;
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="map">
+      <div class="city">
+        <div class="pot"></div>
+        <div class="pluse1"></div>
+        <div class="pluse2"></div>
+        <div class="pluse3"></div>
+      </div>
+      <div class="city_jx">
+        <div class="pot"></div>
+        <div class="pluse1"></div>
+        <div class="pluse2"></div>
+        <div class="pluse3"></div>
+      </div>
+      <div class="city_gd">
+        <div class="pot"></div>
+        <div class="pluse1"></div>
+        <div class="pluse2"></div>
+        <div class="pluse3"></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>常用的键盘事件</title>
+  </head>
+  <body>
+    <script>
+      // 弹起时触发
+      document.onkeyup = function () {
+        console.log('松开触发')
+      }
+      // 按下触发
+      document.addEventListener('keydown', function () {
+        console.log('按下触发down')
+      })
+      // 按下触发，但不能识别功能键
+      document.addEventListener('keypress', function () {
+        console.log('按下触发press')
+      })
+    </script>
+  </body>
+</html>

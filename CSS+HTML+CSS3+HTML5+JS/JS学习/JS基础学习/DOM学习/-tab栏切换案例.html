@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tab栏切换案例</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .tab {
+        width: 800px;
+        /* height: 1000px; */
+        background-color: skyblue;
+        margin: 0 auto;
+      }
+      .tab_list {
+        background-color: pink;
+        margin: 0 auto;
+        cursor: pointer;
+      }
+      .tab_list li {
+        list-style: none;
+        display: block;
+        width: 200px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        float: left;
+        background-color: #fff;
+      }
+      .tab_list .current {
+        background-color: red;
+        color: #fff;
+      }
+      .item {
+        display: none;
+        padding: 20px 0 0 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tab">
+      <div class="tab_list">
+        <ul>
+          <li class="current">商品介绍</li>
+          <li>规格与包装</li>
+          <li>商品评价</li>
+          <li>手机社区</li>
+        </ul>
+      </div>
+      <div class="tab_con">
+        <div class="item">商品介绍模块</div>
+        <div class="item">规格与包装模块</div>
+        <div class="item">售后与保障模块</div>
+        <div class="item">商品评价（5000）模块</div>
+      </div>
+    </div>
+    <script>
+      var tab_list = document.querySelector('.tab_list')
+      var lis = tab_list.querySelectorAll('li')
+      var items = document.querySelectorAll('.item')
+      for (var i = 0; i < lis.length; i++) {
+        lis[i].setAttribute('index', i)
+        lis[i].onclick = function () {
+          for (var i = 0; i < lis.length; i++) {
+            lis[i].className = ''
+          }
+          this.className = 'current'
+          var index = this.getAttribute('index')
+          for (var i = 0; i < lis.length; i++) {
+            items[i].style.display = 'none'
+          }
+          items[index].style.display = 'block'
+        }
+      }
+    </script>
+  </body>
+</html>

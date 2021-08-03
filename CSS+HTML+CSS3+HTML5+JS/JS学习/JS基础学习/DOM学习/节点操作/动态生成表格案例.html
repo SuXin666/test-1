@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>动态生成表格</title>
+    <style>
+      table {
+        width: 300px;
+        margin: 100px auto;
+        text-align: center;
+        border-collapse: collapse;
+        font-size: 16px;
+      }
+      thead th {
+        border-right: 1px solid#333;
+      }
+      thead tr {
+        height: 30px;
+        background-color: gray;
+      }
+      tbody tr {
+        height: 30px;
+      }
+      tbody td {
+        font-size: 12px;
+        border: 1px solid gray;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>姓名</th>
+          <th>科目</th>
+          <th>成绩</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- <tr>
+          <td>张三</td>
+          <td>JS</td>
+          <td>100</td>
+          <td><a href="javascript">删除</a></td>
+        </tr>
+        <tr>
+          <td>王五</td>
+          <td>JS</td>
+          <td>80</td>
+          <td><a href="javascript">删除</a></td>
+        </tr>
+        <tr>
+          <td>李四</td>
+          <td>JS</td>
+          <td>70</td>
+          <td><a href="javascript">删除</a></td>
+        </tr>
+        <tr>
+          <td>老王</td>
+          <td>JS</td>
+          <td>80</td>
+          <td><a href="javascript">删除</a></td>
+        </tr> -->
+      </tbody>
+    </table>
+    <script>
+      var data = [
+        {
+          name: '张三',
+          subject: 'JS',
+          score: 100
+        },
+        {
+          name: '王五',
+          subject: 'JS',
+          score: 80
+        },
+        {
+          name: '李四',
+          subject: 'JS',
+          score: 70
+        },
+        {
+          name: '老王',
+          subject: 'JS',
+          score: 80
+        }
+      ]
+      var tbody = document.querySelector('tbody')
+      for (var i = 0; i < data.length; i++) {
+        var tr = document.createElement('tr')
+        tbody.appendChild(tr)
+        for (var k in data[i]) {
+          var td = document.createElement('td')
+          // k打印的是属性名 obj[k]打印的才是属性值
+          console.log(k)
+          td.innerHTML = data[i][k]
+          tr.appendChild(td)
+        }
+        var td = document.createElement('td')
+        td.innerHTML = '<a href="javascript:;">删除</a>'
+        tr.appendChild(td)
+      }
+      var as = document.querySelectorAll('a')
+      for (var i = 0; i < as.length; i++) {
+        as[i].onclick = function () {
+          tbody.removeChild(this.parentNode.ParentNode)
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>过渡处理</title>
+    <style>
+      div {
+        width: 200px;
+        height: 75px;
+        background-color: pink;
+        /* transition：all 0.5s全部实现过渡 */
+        transition: width 0.5s ease 0s, width 0.5s ease 0s;
+      }
+      div:hover {
+        height: 150px;
+        width: 400px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>

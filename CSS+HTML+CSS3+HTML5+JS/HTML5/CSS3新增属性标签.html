@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS3新增标签</title>
+    <style>
+      /* 必须是input 但是同时具有value这个属性 */
+      input[value] {
+        color: pink;
+      }
+      /* 只选择type=text的文本框选择出来 */
+      input[type='text'] {
+        color: red;
+      }
+      div[class^='ico'] {
+        color: pink;
+      }
+      div[class$='data'] {
+        color: blue;
+      }
+      /* 只要有ico都选择出来 */
+      /* div[class*='ico'] {
+        color: purple;
+      } */
+    </style>
+  </head>
+  <body>
+    <input type="tex" value="请输入:" />
+    <input type="text" />
+    <input type="password" name="" id="" />
+    <div class="ico1">1</div>
+    <div class="ico2">2</div>
+    <div class="ico3">3</div>
+    <div class="ico4">4</div>
+    <div class="ico1-data">5</div>
+    <div class="ico2-data">6</div>
+    <div class="select3">7</div>
+    <div class="select4">8</div>
+  </body>
+</html>

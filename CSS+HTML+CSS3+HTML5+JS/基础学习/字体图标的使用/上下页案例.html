@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>页面上下页</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        text-align: center;
+        line-height: 100px;
+        width: 800px;
+        height: 100px;
+        /* background-color: pink; */
+        margin: 0 auto;
+      }
+      .box a {
+        width: 60px;
+        height: 30px;
+        display: inline-block;
+        text-decoration: none;
+        text-align: center;
+        line-height: 30px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        background-color: #f7f7f7;
+      }
+      .box .prev,
+      .box .next {
+        width: 80px;
+      }
+      .box .two,
+      .box .seven {
+        background-color: #fff;
+        border: none;
+      }
+
+      .box input {
+        width: 60px;
+        height: 26px;
+        border: 1px solid #ccc;
+        outline: none;
+      }
+      .box .last {
+        font-weight: 400;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <a href="#" class="prev"><<上一页</a>
+      <a href="#" class="two">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">5</a>
+      <a href="#">6</a>
+      <a href="#" class="seven">...</a>
+      <a href="#" class="next">>>下一页</a>
+      <span class="last"> 共十页 到第<input type="text" />页<button>确定</button> </span>
+    </div>
+  </body>
+</html>
